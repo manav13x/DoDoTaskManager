@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-header bg-dark text-white">
+          <span class="form-title"><i class="fa fa-plus"></i>&nbsp;<strong>Add Task</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <form class="form" #f="ngForm" novalidate (ngSubmit)="f.valid && save()">
+        <div class="mb-3 mt-2">
+          <p>
+            <strong>Task Name</strong>
+          </p>
+          <input type="text" class="form-control" id="tnm" name="tnm" required minlength="5" maxlength="25" [(ngModel)]="firstName"
+            #tnm=ngModel placeholder="Task Name" />
+          <div class="alert alert-danger" *ngIf="(tnm.errors && (tnm.touched || tnm.darty))">
+            <p *ngIf="(tnm.errors && (tnm.touched || tnm.darty))">Please see that Task Name
+              <strong>
+                <span *ngIf="tnm.errors.required">is not left blank</span>
+                <span *ngIf="tnm.errors.minlength">is atleast 5 chars in length</span>
+              </strong>
+            </p>
+          </div>
+        </div>
+        <div class="mb-3">
+          <p>
+            <strong>Task Description</strong>
+          </p>
+          <textarea rows="5" cols="50" class="form-control" id="td" name="td" required minlength="5" maxlength="100"
+            [(ngModel)]="tds" #td=ngModel placeholder="Task Description"></textarea>
+          <div class="alert alert-danger" *ngIf="(td.errors && (td.touched || td.darty))">
+            <p *ngIf="(td.errors && (td.touched || td.darty))">Please see that Task Description
+              <strong>
+                <span *ngIf="td.errors.required">is not left blank</span>
+                <span *ngIf="td.errors.minlength">is atleast 5 chars in length</span>
+              </strong>
+            </p>
+          </div>
+        </div>
+        <div class="mb-3">
+            <div class="input-group" style="padding:0px">
+                    <p style="margin: 0px;">
+                      <strong>Category</strong>&nbsp;&nbsp;
+                    </p>
+                <select class="form-control" name="cat" id="cat"  required [(ngModel)]="emplyoeedept" #cat=ngModel>
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="Money">Money</option>
+                    <option value="Health">Health</option>
+                    <option value="Inspiration">Inspiration</option>
+                </select>
+              </div>
+          <div class="alert alert-danger" *ngIf="(cat.errors && (cat.touched || cat.darty))">
+            <p *ngIf="(cat.errors && (cat.touched || cat.darty))">Please see that Category
+              <strong>
+                <span *ngIf="cat.errors.required">is not left blank</span>
+              </strong>
+            </p>
+          </div>
+        </div>
+        <div class="mb-3">
+          <span>
+            <strong style="color:red">Urgent:</strong>
+            Tick the checkbox is this task is Urgent</span> &nbsp;&nbsp;
+              <input type="checkbox" value="urgent" id="priority" name="priority" [(ngModel)] = "priority"/>
+            </div>
+            <button type="button" class="btn btn-success btn-inline">Add Task</button>
+      </form>
+      <div style="height:100px"></div>
+    </div>
+  </div>
+</div>

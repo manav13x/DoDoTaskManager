@@ -1,0 +1,116 @@
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <form class="login100-form validate-form">
+        <span class="login100-form-title p-b-43">
+          <span class="myclass3">Sign-Up for Hassle Free Task Planning!</span>
+        </span>
+        <br>
+        <div class="wrap-input100">
+          <input class="input100" type="email" name="mail" placeholder="Email" name="mail"  required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+          [(ngModel)]="enm" #mail="ngModel"/>
+          <span class="focus-input100"></span>
+        </div>
+        <div class="alert alert-danger" *ngIf="mail.errors && (mail.touched || mail.darty)">
+          <p>Please see that Email ID
+            <strong>
+              <span *ngIf="mail.errors.required">is not left blank</span>
+              <span *ngIf="mail.errors.pattern">is of correct format</span>
+            </strong>
+          </p>
+        </div>
+        <div class="wrap-input100">
+          <input class="input100" type="text" name="unm" id="unm" placeholder="Username" required minlength="5" maxlength="15" [(ngModel)]="mol" #unm=ngModel/>
+          <span class="focus-input100"></span>
+        </div>
+        <div class="alert alert-danger" *ngIf="(unm.errors && (unm.touched || unm.darty))">
+          <p *ngIf="(unm.errors && (tnm.touched || unm.darty))">Please see that UserName
+            <strong>
+              <span *ngIf="unm.errors.required">is not left blank</span>
+              <span *ngIf="unm.errors.minlength">is atleast 5 chars in length</span>
+            </strong>
+          </p>
+        </div>
+        <div class="wrap-input100">
+          <input class="input100" type="password" id="pw" name="pw" placeholder="Password" required [(ngModel)]="pass1" #pw=ngModel>
+          <span class="focus-input100"></span>
+        </div>
+        <div class="alert alert-danger" *ngIf="pw.errors && (pw.darty || pw.touched)">
+          <p>Please see that Password
+            <strong>
+              <span *ngIf="pw.errors.required">is not Empty</span>
+            </strong>
+          </p>
+        </div>
+        <div class="wrap-input100 ">
+          <input class="input100" type="password" id="pw1" name="pw1" placeholder="Confirm Password" required [(ngModel)]="ddd" #pw1=ngModel>
+          <span class="focus-input100"></span>
+        </div>
+        <div class="alert alert-danger" *ngIf="pw1.errors && (pw1.darty || pw1.touched)">
+          <p>Please see that Password
+            <strong>
+              <span *ngIf="pw1.errors.required">is not Empty</span>
+            </strong>
+          </p>
+        </div>
+        <div class="container-login100-form-btn mt-2">
+          <button class="login100-form-btn">
+            Register
+          </button>
+        </div>
+      </form>
+      <div class="login100-more" style="background-image: url(assets/images/bg-01.jpg);">
+      </div>
+    </div>
+  </div>
+</div>
+<footer id="myFooter" class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <h3 class="logo"><a routerLink=""></a></h3>
+      </div>
+      <div class="col-sm-2">
+        <h5>Get started</h5>
+        <ul>
+          <li><a routerLink="">Home</a></li>
+          <li><a routerLink="/register">Sign up</a></li>
+          <li><a href="#">Downloads</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-2">
+        <h5>About us</h5>
+        <ul>
+          <li><a href="#">Company Information</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Reviews</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-2">
+        <h5>Support</h5>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Help desk</a></li>
+          <li><a href="#">Forums</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <div class="social-networks">
+          <a href="#" class="twitter">
+            <fa name="twitter"></fa>
+          </a>
+          <a href="#" class="facebook">
+            <fa name="facebook"></fa>
+          </a>
+          <a href="#" class="google">
+            <fa name="linkedin"></fa>
+          </a>
+        </div>
+        <a class="btn btn-default" routerLink=''>Contact us</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <p>© 2016 Copyright Text </p>
+  </div>
+</footer>

@@ -1,0 +1,21 @@
+
+<div class="container-fluid" style="padding-left:0px">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="wrapper">
+        <aside class="main_sidebar">
+          <ul>
+            <li><i class="fa fa-tachometer"></i><a routerLink="/dashboard/">Dashboard</a></li>
+            <li><i class="fa fa-th-list"></i><a routerLink="/dashboard/listtask">TaskList</a></li>
+            <li><i class="fa fa-history"></i><a routerLink="/dashboard/taskhistory">Task History</a></li>
+            <li><i class="fa fa-plus"></i><a routerLink="/dashboard/addtask">Add Task</a></li>
+            <li><i class="fa fa-user"></i><a routerLink="/dashboard/addtask">Log Out</a></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+    <div class="col-sm-9" style="padding-top:30px">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
